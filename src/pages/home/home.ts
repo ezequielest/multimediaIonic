@@ -19,6 +19,7 @@ export class HomePage {
     console.log('obteniendo lista multimedia')
     this._multimediaListProvider.getListaMultimedia().subscribe(data => {
       this.listaMultimedia = data;
+      console.log(this.listaMultimedia)
     })
   }
 

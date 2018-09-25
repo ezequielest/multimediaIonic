@@ -1,17 +1,46 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>Lista Multimedia</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <div *ngFor="let mes of listaMultimedia">
+
+      <ion-card class="mes">
+          <ion-card-content  [ngStyle]="{'background-image': 'url(' + mes.img +')'}" class="fecha">
+            {{ mes.mes | date:'MMMM yyyy'}}
+          </ion-card-content>
+      </ion-card>
+      
+      <div *ngFor="let actividad of mes.actividades">
+        <div *ngIf="actividad.especial == true; else tareaNormal">
+          <ion-card color="special">
+            <ion-card-header>
+              <button ion-button color="danger" round>{{ actividad.fecha | date:'dd' }}</button>  <button ion-button outline color="light" *ngFor="let integrante of actividad.miembros">{{ integrante.nombre }}</button>
+            </ion-card-header>
+            <ion-card-content>
+              <h1>{{ actividad.titulo }}</h1>
+              <p>{{ actividad.descripcion }}</p>
+            </ion-card-content>
+          </ion-card>
+        </div>
+
+        <ng-template #tareaNormal>
+            <ion-card>
+                <ion-card-header>
+                  <button ion-button color="danger" round>{{ actividad.fecha | date:'dd' }}</button>  <button ion-button outline *ngFor="let integrante of actividad.miembros">{{ integrante.nombre }}</button>
+                </ion-card-header>
+                <ion-card-content>
+                  <h1>{{ actividad.titulo }}</h1>
+                  <p>{{ actividad.descripcion }}</p>
+                </ion-card-content>
+            </ion-card>
+        </ng-template>
+
+      </div>
+
+      
+      
+  </div>
 </ion-content>
