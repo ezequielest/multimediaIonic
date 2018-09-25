@@ -1,17 +1,25 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Contact
+      Contacto
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
-    </ion-item>
-  </ion-list>
+
+    <ion-card>
+      <ion-card-content>
+        <ion-list>
+          <ion-item *ngFor="let integrante of miembros;let i = index">
+            <ion-avatar item-start>
+              <img src="../../assets/imgs/backgrounds/b{{i+2}}.jpg">
+            </ion-avatar>
+            <h2>{{integrante.nombre}}</h2>
+            <p>{{integrante.tel}}</p>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
 </ion-content>

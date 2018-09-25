@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { MultimediaListProvider } from "../../providers/multimedia-list/multimedia-list";
 
 @Component({
   selector: 'page-contact',
@@ -7,8 +8,13 @@ import { NavController } from 'ionic-angular';
 })
 export class ContactPage {
 
-  constructor(public navCtrl: NavController) {
+  miembros
 
+  constructor(public navCtrl: NavController, private _multimediaListProvider:MultimediaListProvider) {
+      this._multimediaListProvider.getIntegrantes().subscribe(data=>{
+        console.log(data)
+        this.miembros = data;
+      });
   }
 
 }

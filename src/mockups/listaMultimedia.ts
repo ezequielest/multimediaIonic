@@ -1,4 +1,4 @@
-export let listaMock = [{
+export let listaMultimedia = [{
     "mes": "2018-11-01",
     "img": "../assets/imgs/backgrounds/b2.jpg",
     "actividades": [
@@ -10,10 +10,15 @@ export let listaMock = [{
             "especial": false,
             "miembros": [
                 {
-                    "nombre": "Maria"
+                    "id": "3",
+                    "nombre": "Belen",
+                    "estado": "normal"
+
                 },
                 {
-                    "nombre": "Tali "
+                    "id": "4",
+                    "nombre": "Loana ",
+                    "estado": "normal"
                 }
             ]
         },{
@@ -24,38 +29,50 @@ export let listaMock = [{
             "especial": false,
             "miembros": [
                 {
-                    "nombre": "Maria"
+                    "id": "1",
+                    "nombre": "Maria",
+                    "estado": "cambio"
                 },
                 {
-                    "nombre": "Tali "
+                    "id": "2",
+                    "nombre": "Tali ",
+                    "estado": "normal"
                 }
             ]
         },{
-            "fecha": "2018-11-04",
+            "fecha": "2018-11-22",
+            "descripcion": "Descripcion de la actividad",
+            "lugar": "Lugar de la actividad",
+            "titulo": "Domingo",
+            "especial": true,
+            "miembros": [
+                {
+                    "id": "5",
+                    "nombre": "Kathy",
+                    "estado": "normal"
+                },
+                {
+                    "id": "6",
+                    "nombre": "Gabriel",
+                    "estado": "normal"
+                }
+            ]
+        },{
+            "fecha": "2018-11-29",
             "descripcion": "Descripcion de la actividad",
             "lugar": "Lugar de la actividad",
             "titulo": "Domingo",
             "especial": false,
             "miembros": [
                 {
-                    "nombre": "Maria"
+                    "id": "3",
+                    "nombre": "Belen",
+                    "estado": "normal"
                 },
                 {
-                    "nombre": "Tali "
-                }
-            ]
-        },{
-            "fecha": "2018-11-16",
-            "descripcion": "Descripcion de la actividad",
-            "lugar": "Lugar de la actividad",
-            "titulo": "Domingo",
-            "especial": false,
-            "miembros": [
-                {
-                    "nombre": "Maria"
-                },
-                {
-                    "nombre": "Tali "
+                    "id": "4",
+                    "nombre": "Loana",
+                    "estado": "normal"
                 }
             ]
         }
@@ -73,10 +90,14 @@ export let listaMock = [{
             "especial": false,
             "miembros": [
                 {
-                    "nombre": "Gabriel"
+                    "id": "5",
+                    "nombre": "Kathy",
+                    "estado": "normal"
                 },
                 {
-                    "nombre": "Belen "
+                    "id": "6",
+                    "nombre": "Gabriel",
+                    "estado": "normal"
                 }
             ]
         },{
@@ -87,10 +108,14 @@ export let listaMock = [{
             "especial": true,
             "miembros": [
                 {
-                    "nombre": "Gabriel"
+                    "id": "3",
+                    "nombre": "Belen",
+                    "estado": "cambio"
                 },
                 {
-                    "nombre": "Belen "
+                    "id": "4",
+                    "nombre": "Loana ",
+                    "estado": "normal"
                 }
             ]
         }

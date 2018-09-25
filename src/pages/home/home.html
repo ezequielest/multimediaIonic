@@ -13,30 +13,25 @@
           </ion-card-content>
       </ion-card>
       
-      <div *ngFor="let actividad of mes.actividades">
-        <div *ngIf="actividad.especial == true; else tareaNormal">
-          <ion-card color="special">
+      <div *ngFor="let actividad of mes.actividades;let i = index">
+          <ion-card [ngClass]="{'cardSpecial': actividad.especial}">
             <ion-card-header>
-              <button ion-button color="danger" round>{{ actividad.fecha | date:'dd' }}</button>  <button ion-button outline color="light" *ngFor="let integrante of actividad.miembros">{{ integrante.nombre }}</button>
+              <button ion-button color="danger" round>{{ actividad.fecha | date:'dd' }}</button>  
+              <div style="display:inline" *ngFor="let integrante of actividad.miembros">
+                <button 
+                    ion-button outline 
+                    [ngClass]="{'btnNormal': integrante.estado=='normal', 'btnSpecial': integrante.estado=='cambio'}" 
+                    (click)="mostrarCambiar(integrante,actividad.fecha)">
+                {{ integrante.nombre }}
+                </button>
+              </div>
             </ion-card-header>
-            <ion-card-content>
+            <ion-card-content class="contentCard">
               <h1>{{ actividad.titulo }}</h1>
               <p>{{ actividad.descripcion }}</p>
             </ion-card-content>
           </ion-card>
-        </div>
-
-        <ng-template #tareaNormal>
-            <ion-card>
-                <ion-card-header>
-                  <button ion-button color="danger" round>{{ actividad.fecha | date:'dd' }}</button>  <button ion-button outline *ngFor="let integrante of actividad.miembros">{{ integrante.nombre }}</button>
-                </ion-card-header>
-                <ion-card-content>
-                  <h1>{{ actividad.titulo }}</h1>
-                  <p>{{ actividad.descripcion }}</p>
-                </ion-card-content>
-            </ion-card>
-        </ng-template>
+      
 
       </div>
 

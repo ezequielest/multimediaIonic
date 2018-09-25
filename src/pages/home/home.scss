@@ -1,5 +1,5 @@
 page-home {
-
+    
     .fecha{
         color: white;   
         height: 150px;
@@ -10,5 +10,29 @@ page-home {
     
 }
 .scroll-content{
-    background-color: #636161;
+    background-color: #ececec;
+}
+
+.cardSpecial{
+    background: color($colors, special);
+
+    .btnSpecial{
+        color: rgb(15, 180, 0) !important;
+        border: 1px solid rgb(2, 201, 62);
+    }
+
+    .btnNormal{
+        color: #fff;
+        border: 1px solid #fff;
+    }
+
+    .contentCard h1, .contentCard p{
+        color: #fff;
+    }
+
+}
+
+.btnSpecial{
+    color: rgb(15, 180, 0) !important;
+    border: 1px solid rgb(2, 201, 62);
 }
